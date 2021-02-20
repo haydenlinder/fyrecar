@@ -19,7 +19,7 @@ function TabPanel(props) {
         >
             {value === index && (
                 <Container>
-                    <Box p={3}>
+                    <Box p={3} display='flex' flexDirection='column' alignItems='center'>
                         <Typography>{children}</Typography>
                     </Box>
                 </Container>
