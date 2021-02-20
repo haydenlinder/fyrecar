@@ -8,7 +8,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-router-dom'
 
-const Header = ({  }) => {
+const Header = ({ title='Your Cars' }) => {
     return (
         <AppBar position="fixed">
             <Container>
@@ -18,6 +18,9 @@ const Header = ({  }) => {
                             <HomeIcon />
                         </IconButton>
                     </Link>
+                    <Typography variant='h4'>
+                        {title}
+                    </Typography>
                     <IconButton style={{ border: '2px solid white' }} edge="start" color="inherit" aria-label="menu">
                         <MenuIcon />
                     </IconButton>
