@@ -2,6 +2,7 @@ import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
@@ -17,9 +18,11 @@ function TabPanel(props) {
             {...other}
         >
             {value === index && (
-                <Box p={3}>
-                    <Typography>{children}</Typography>
-                </Box>
+                <Container>
+                    <Box p={3}>
+                        <Typography>{children}</Typography>
+                    </Box>
+                </Container>
             )}
         </div>
     );
@@ -43,11 +46,13 @@ export default function AvailabilityTabs() {
     return (
         <div>
             <AppBar position="static" color='secondary' style={{ width: '100vw' }}>
-                <Tabs value={value} indicatorColor='primary' centered onChange={handleChange} aria-label="availability tabs">
-                    <Tab label="All" {...a11yProps(0)} />
-                    <Tab label="Available" {...a11yProps(1)} />
-                    <Tab label="In Use" {...a11yProps(2)} />
-                </Tabs>
+                <Container>
+                    <Tabs value={value} indicatorColor='primary' variant='fullWidth' centered onChange={handleChange} aria-label="availability tabs">
+                        <Tab label="All" {...a11yProps(0)} />
+                        <Tab label="Available" {...a11yProps(1)} />
+                        <Tab label="In Use" {...a11yProps(2)} />
+                    </Tabs>
+                </Container>
             </AppBar>
             <TabPanel value={value} index={0}>
                 Item One
