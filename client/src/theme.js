@@ -14,12 +14,17 @@ const theme = createMuiTheme({
             main: red.A400,
         },
         background: {
-            default: '#fff',
+            default: '#EFEFEF',
         },
         textPrimary: {
+            main: green[400]
+        },
+        textSecondary: {
+            main: green[900]
+        },
+        textGreen: {
             main: '#fffff'
         }
-
     },
 });
 

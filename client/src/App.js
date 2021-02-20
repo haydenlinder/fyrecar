@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import theme from './theme'
 import { ThemeProvider } from '@material-ui/core/styles'
+import CssBaseline from '@material-ui/core/CssBaseline';
 import Cars from './pages/Cars'
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -14,6 +15,7 @@ import Box from '@material-ui/core/Box'
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Router>
         <Header />
         <Container>

@@ -3,14 +3,15 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import CarList from '../components/CarList'
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
     return (
         <div
+            style={{ background: '#EFEFEF', height: '100%' }}
             role="tabpanel"
             hidden={value !== index}
             id={`simple-tabpanel-${index}`}
@@ -18,9 +19,9 @@ function TabPanel(props) {
             {...other}
         >
             {value === index && (
-                <Container>
-                    <Box p={3} display='flex' flexDirection='column' alignItems='center'>
-                        <Typography>{children}</Typography>
+                <Container >
+                    <Box p={3} display='flex' flexDirection='column' alignItems='center' >
+                        <CarList />
                     </Box>
                 </Container>
             )}
@@ -44,7 +45,7 @@ export default function AvailabilityTabs() {
     };
 
     return (
-        <div>
+        <div style={{ height: '100%' }}>
             <AppBar position="static" color='secondary' style={{ width: '100vw' }}>
                 <Container>
                     <Tabs value={value} indicatorColor='primary' variant='fullWidth' centered onChange={handleChange} aria-label="availability tabs">
