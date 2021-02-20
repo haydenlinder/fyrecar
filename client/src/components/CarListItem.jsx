@@ -13,24 +13,26 @@ export default function CarListItem({
     schedule=[new Date().toLocaleTimeString().slice(0,-6)]
 }) {
     return (
-        <Card >
-            <Box display='flex'>
-                <CardMedia
-                    style={{ height: 140, width: 200 }}
-                    image={photoUrl}
-                    title="Live from space album cover"
-                />
-                <CardContent >
-                    <Typography component="h5" variant="h5">
-                        {year} {make} {model} 
-                    </Typography>
-                    <Typography variant="subtitle1" >
-                        <Box color="textSecondary.main">
-                            Available until {schedule[0]}
-                        </Box>
-                    </Typography>
-                </CardContent>
-            </Box>
-        </Card>
+        <Box mt={2}>
+            <Card>
+                <Box display='flex'>
+                    <CardMedia
+                        style={{ height: 140, width: 200 }}
+                        image={photoUrl}
+                        title="Live from space album cover"
+                    />
+                    <CardContent >
+                        <Typography component="h5" variant="h5">
+                            {year} {make} {model} 
+                        </Typography>
+                        <Typography variant="subtitle1" >
+                            <Box color="textSecondary.main">
+                                Available until {schedule[0]}
+                            </Box>
+                        </Typography>
+                    </CardContent>
+                </Box>
+            </Card>            
+        </Box>
     );
 }

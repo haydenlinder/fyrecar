@@ -1,8 +1,15 @@
 import CarListItem from "./CarListItem"
+import Box from '@material-ui/core/Box'
 
-const CarList = ({ cars }) => {
+const CarList = ({ type, cars }) => {
     return (
-        <CarListItem />
+        <Box height='100%' pb={15} overflow='scroll' display='flex' flexDirection='column' alignItems='center'>
+            <CarListItem />
+            <CarListItem />
+            <CarListItem />
+            <CarListItem />
+            <CarListItem />
+        </Box>
     )
 }
 

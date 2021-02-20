@@ -18,8 +18,8 @@ function App() {
       <CssBaseline />
       <Router>
         <Header />
-        <Container>
-          <Box pt={10.25} pb={12} height='100vh' display='flex' flexDirection='column' alignItems='center'>
+        <Container maxWidth='md'>
+          <Box pt={10.25} pb={10.25} height='100vh' display='flex' flexDirection='column' alignItems='center'>
             <Cars />
           </Box>
         </Container>

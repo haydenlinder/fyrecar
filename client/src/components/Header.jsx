@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 const Header = ({ title='Your Cars' }) => {
     return (
         <AppBar position="fixed">
-            <Container>
+            <Container maxWidth='md'>
                 <Box display='flex' py={1} alignItems='center' justifyContent='space-between' height={80}>
                     <Link to='/'>
                         <IconButton edge="start" color="secondary" aria-label="menu">

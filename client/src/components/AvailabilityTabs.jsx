@@ -19,11 +19,9 @@ function TabPanel(props) {
             {...other}
         >
             {value === index && (
-                <Container >
-                    <Box p={3} display='flex' flexDirection='column' alignItems='center' >
-                        <CarList />
-                    </Box>
-                </Container>
+                // <Container style={{ height: '100%' }} maxWidth='md'>
+                    <CarList type={value}/>
+                // </Container>
             )}
         </div>
     );
@@ -47,7 +45,7 @@ export default function AvailabilityTabs() {
     return (
         <div style={{ height: '100%' }}>
             <AppBar position="static" color='secondary' style={{ width: '100vw' }}>
-                <Container>
+                <Container maxWidth='md'>
                     <Tabs value={value} indicatorColor='primary' variant='fullWidth' centered onChange={handleChange} aria-label="availability tabs">
                         <Tab label="All" {...a11yProps(0)} />
                         <Tab label="Available" {...a11yProps(1)} />
