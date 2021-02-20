@@ -12,7 +12,7 @@ const Header = ({  }) => {
     return (
         <AppBar position="fixed">
             <Container>
-                <Box display='flex' py={1} alignItems='center' justifyContent='space-between'>
+                <Box display='flex' py={1} alignItems='center' justifyContent='space-between' height={80}>
                     <Link to='/'>
                         <IconButton edge="start" color="secondary" aria-label="menu">
                             <HomeIcon />

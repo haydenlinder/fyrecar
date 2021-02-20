@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import theme from './theme'
 import { ThemeProvider } from '@material-ui/core/styles'
+import Cars from './pages/Cars'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { BrowserRouter as Router } from 'react-router-dom'
@@ -16,8 +17,8 @@ function App() {
       <Router>
         <Header />
         <Container>
-          <Box pt={15} pb={12} height='100vh' display='flex' flexDirection='column' alignItems='center'>
-            Heya
+          <Box pt={10.25} pb={12} height='100vh' display='flex' flexDirection='column' alignItems='center'>
+            <Cars />
           </Box>
         </Container>
         <Footer />
