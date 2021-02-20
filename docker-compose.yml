@@ -1,0 +1,23 @@
+version: '3.6'
+services:
+  client:
+    build: ./client
+    volumes:
+    - ./client:/app
+    ports:
+    - "3000:3000"
+    depends_on:
+    - "server"  
+    environment:
+      NEXT_PUBLIC_CLIENT_SERVICE_URL: http://localhost:4000
+      NEXT_PUBLIC_SERVER_SERVICE_URL: http://host.docker.internal:4000
+
+  server:
+    build: ./server
+    volumes:
+    - ./server:/app
+    ports:
+    - "4000:4000"
+    environment:
+      PORT: 4000
+      SERVER_SECRET: adsf.fn&m^as%aosmdn;asoi2n
