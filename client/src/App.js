@@ -3,6 +3,7 @@ import './App.css';
 import theme from './theme'
 import { ThemeProvider } from '@material-ui/core/styles'
 import Header from './components/Header';
+import Footer from './components/Footer';
 import { BrowserRouter as Router } from 'react-router-dom'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
@@ -15,8 +16,11 @@ function App() {
       <Router>
         <Header />
         <Container>
-          <Box></Box>
+          <Box pt={15} pb={12} height='100vh' display='flex' flexDirection='column' alignItems='center'>
+            Heya
+          </Box>
         </Container>
+        <Footer />
       </Router>
     </ThemeProvider>
   );

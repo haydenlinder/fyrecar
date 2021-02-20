@@ -4,31 +4,23 @@ import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
+import HomeIcon from '@material-ui/icons/Home';
 import Typography from '@material-ui/core/Typography'
 import { Link } from 'react-router-dom'
 
 const Header = ({  }) => {
-
     return (
         <AppBar position="fixed">
             <Container>
-                <Box mx={2} display='flex' alignItems='center' justifyContent='space-between'>
-                    <Box display='flex' alignItems='center'>
-                        <Link to='/'>
-                            <Button color='inherit'>
-                                <Box py={2}>
-                                    <Typography variant='h5' color='secondary'>
-                                        FyreCar
-                                    </Typography>
-                                </Box>
-                            </Button>
-                        </Link>
-                    </Box>
-                    <Box>
-                        <IconButton edge="start" color="inherit" aria-label="menu">
-                            <MenuIcon />
+                <Box display='flex' py={1} alignItems='center' justifyContent='space-between'>
+                    <Link to='/'>
+                        <IconButton edge="start" color="secondary" aria-label="menu">
+                            <HomeIcon />
                         </IconButton>
-                    </Box>
+                    </Link>
+                    <IconButton style={{ border: '2px solid white' }} edge="start" color="inherit" aria-label="menu">
+                        <MenuIcon />
+                    </IconButton>
                 </Box>
             </Container>
         </AppBar>
