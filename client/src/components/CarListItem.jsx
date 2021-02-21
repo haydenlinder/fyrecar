@@ -4,8 +4,9 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-
+import { useHistory } from 'react-router-dom'
 export default function CarListItem({ 
+    id=1234,
     year='2020',
     make='Acura',
     model='NSX',
@@ -13,8 +14,11 @@ export default function CarListItem({
     schedule=new Date().toLocaleTimeString().slice(0,-6),
     isAvailable=false
 }) {
+
+    const history = useHistory()
+
     return (
-        <Box mt={2} mr={1} ml={1}>
+        <Box mt={2} mr={1} ml={1} style={{cursor: 'pointer'}} onClick={e => history.push(`/mycars/${id}`)}>
             <Card>
                 <Box display='flex'>
                     <CardMedia

@@ -21,12 +21,12 @@ export default function Footer() {
     const location = useLocation()
 
     React.useEffect(() => {
-        setValue(NAV2[location.pathname])
+        setValue(NAV2[location.pathname]||0)
     },[location.pathname])
 
     return (
         <BottomNavigation
-        style={{ position: 'absolute', bottom: 0, left: 0, right: 0, borderTop: '1px solid gray' }}
+            style={{ position: 'absolute', bottom: 0, left: 0, right: 0, borderTop: '1px solid gray' }}
             value={value}
             onChange={(event, newValue) => {
                 setValue(newValue);

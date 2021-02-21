@@ -20,7 +20,7 @@ function TabPanel(props) {
         >
             {value === index && (
                 <Container disableGutters style={{ height: '100%', position: 'relative' }} maxWidth='md'>
-                    <CarList type={index}/>
+                    {children}
                 </Container>
             )}
         </div>
@@ -35,7 +35,7 @@ function a11yProps(index) {
 }
 
 
-export default function AvailabilityTabs() {
+export default function CarInfoTabs() {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -43,24 +43,18 @@ export default function AvailabilityTabs() {
     };
 
     return (
-        <div style={{ height: '100%' }}>
-            <AppBar position="static" color='secondary' style={{ width: '100vw' }}>
-                <Container maxWidth='md'>
-                    <Tabs value={value} indicatorColor='primary' variant='fullWidth' centered onChange={handleChange} aria-label="availability tabs">
-                        <Tab label="All" {...a11yProps(0)} />
-                        <Tab label="Available" {...a11yProps(1)} style={{ color: '#1b5e20' }}/>
-                        <Tab label="In Use" {...a11yProps(2)} style={{ color: '#5800B0' }}/>
-                    </Tabs>
-                </Container>
+        <div style={{ height: '50%' }}>
+            <AppBar position="static" color='secondary' >
+                <Tabs value={value} indicatorColor='primary' variant='fullWidth' centered onChange={handleChange} aria-label="availability tabs">
+                    <Tab label="Info" {...a11yProps(0)} />
+                    <Tab label="Schedule" {...a11yProps(1)} style={{ color: '#1b5e20' }} />
+                </Tabs>
             </AppBar>
-            <TabPanel value={value} index={0}>
-                Item One
+            <TabPanel value={value} index={0} >
+                Info
             </TabPanel>
-            <TabPanel value={value} index={1}>
-                Item Two
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                Item Three
+            <TabPanel value={value} index={1} >
+                <CarList type={value} />
             </TabPanel>
         </div>
     );
