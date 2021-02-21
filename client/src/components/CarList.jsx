@@ -11,7 +11,7 @@ const CarList = ({ type, cars }) => {
             <CarListItem />
             <CarListItem />
             <CarListItem />
-            <IconButton style={{ border: '2px solid white', boxShadow: '3px 3px 5px grey', background: '#2196f3', position: 'absolute', bottom: 30, right: 20 }}  edge="start" aria-label="menu">
+            <IconButton style={{ border: '2px solid white', boxShadow: '3px 3px 5px grey', background: '#2196f3', position: 'absolute', bottom: 30, right: 15 }}  edge="start" aria-label="menu">
                 <AddRoundedIcon fontSize='large' color='secondary' />
             </IconButton>
         </Box>

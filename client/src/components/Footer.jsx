@@ -1,13 +1,28 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import DriveEtaIcon from '@material-ui/icons/DriveEta';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import { useHistory, useLocation } from 'react-router-dom'
+
+const NAV = {
+    0: '/',
+    1: '/profile'
+}
+
+const NAV2 = {
+    '/': 0,
+    '/profile': 1
+}
 
 export default function Footer() {
-    const [value, setValue] = React.useState('Cars');
+    const [value, setValue] = React.useState(0);
+    const history = useHistory()
+    const location = useLocation()
+
+    React.useEffect(() => {
+        setValue(NAV2[location.pathname])
+    },[location.pathname])
 
     return (
         <BottomNavigation
@@ -15,6 +30,7 @@ export default function Footer() {
             value={value}
             onChange={(event, newValue) => {
                 setValue(newValue);
+                history.push(NAV[newValue])
             }}
             showLabels
         >
