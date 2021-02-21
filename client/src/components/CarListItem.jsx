@@ -17,12 +17,12 @@ export default function CarListItem({
             <Card>
                 <Box display='flex'>
                     <CardMedia
-                        style={{ height: 140, width: 200 }}
+                        style={{ height: 100, width: 130 }}
                         image={photoUrl}
                         title="Live from space album cover"
                     />
                     <CardContent >
-                        <Typography component="h5" variant="h5">
+                        <Typography >
                             {year} {make} {model} 
                         </Typography>
                         <Typography variant="subtitle1" >

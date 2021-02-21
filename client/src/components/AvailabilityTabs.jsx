@@ -19,9 +19,9 @@ function TabPanel(props) {
             {...other}
         >
             {value === index && (
-                // <Container style={{ height: '100%' }} maxWidth='md'>
+                <Container style={{ height: '100%', position: 'relative' }} maxWidth='md'>
                     <CarList type={value}/>
-                // </Container>
+                </Container>
             )}
         </div>
     );
