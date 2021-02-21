@@ -19,7 +19,7 @@ function TabPanel(props) {
             {...other}
         >
             {value === index && (
-                <Container style={{ height: '100%', position: 'relative' }} maxWidth='md'>
+                <Container disableGutters style={{ height: '100%', position: 'relative' }} maxWidth='md'>
                     <CarList type={value}/>
                 </Container>
             )}
@@ -48,8 +48,8 @@ export default function AvailabilityTabs() {
                 <Container maxWidth='md'>
                     <Tabs value={value} indicatorColor='primary' variant='fullWidth' centered onChange={handleChange} aria-label="availability tabs">
                         <Tab label="All" {...a11yProps(0)} />
-                        <Tab label="Available" {...a11yProps(1)} />
-                        <Tab label="In Use" {...a11yProps(2)} />
+                        <Tab label="Available" {...a11yProps(1)} style={{ color: '#1b5e20' }}/>
+                        <Tab label="In Use" {...a11yProps(2)} style={{ color: '#5800B0' }}/>
                     </Tabs>
                 </Container>
             </AppBar>

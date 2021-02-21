@@ -12,9 +12,11 @@ const Profile = ({
             <Box mr={2}>
                 <Avatar src={photoUrl} style={{ height: 150, width: 150}}/>
             </Box>
-            <Typography variant='h4'>
-                {firstName} {lastName}
-            </Typography>
+            <Box mt={2}>
+                <Typography variant='h4'>
+                    {firstName} {lastName}
+                </Typography>
+            </Box>
         </Box>
     )
 }

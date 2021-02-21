@@ -9,11 +9,12 @@ export default function CarListItem({
     year='2020',
     make='Acura',
     model='NSX',
-    photoUrl ='https://pictures.dealer.com/a/acuraofpembrokepinesadw/0907/f2c981353d653c86e3261040ed598e7ax.jpg',
-    schedule=[new Date().toLocaleTimeString().slice(0,-6)]
+    photoUrl='https://pictures.dealer.com/a/acuraofpembrokepinesadw/0907/f2c981353d653c86e3261040ed598e7ax.jpg',
+    schedule=new Date().toLocaleTimeString().slice(0,-6),
+    isAvailable=false
 }) {
     return (
-        <Box mt={2}>
+        <Box mt={2} mr={1} ml={1}>
             <Card>
                 <Box display='flex'>
                     <CardMedia
@@ -26,9 +27,14 @@ export default function CarListItem({
                             {year} {make} {model} 
                         </Typography>
                         <Typography variant="subtitle1" >
+                            {isAvailable?
                             <Box color="textSecondary.main">
-                                Available until {schedule[0]}
+                                Available until {schedule}
+                            </Box> :
+                            <Box color="textSecondary.inUse">
+                                In Use until {schedule}
                             </Box>
+                            }
                         </Typography>
                     </CardContent>
                 </Box>

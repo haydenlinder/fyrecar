@@ -20,7 +20,8 @@ const theme = createMuiTheme({
             main: green[400]
         },
         textSecondary: {
-            main: green[900]
+            main: green[900],
+            inUse: '#5800B0'
         },
         textGreen: {
             main: '#fffff'

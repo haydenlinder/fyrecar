@@ -5,7 +5,7 @@ import AddRoundedIcon from '@material-ui/icons/AddRounded';
 
 const CarList = ({ type, cars }) => {
     return (
-        <Box height='100%' pb={15} overflow='scroll' display='flex' flexDirection='column' alignItems='center'>
+        <Box height='100%' pb={15} overflow='scroll' display='flex' justifyContent='center' alignItems='center' flexWrap='wrap'>
             <CarListItem />
             <CarListItem />
             <CarListItem />
