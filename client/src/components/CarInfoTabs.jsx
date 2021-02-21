@@ -3,8 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
-import CarList from '../components/CarList'
+import ScheduleList from '../components/ScheduleList'
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -54,7 +53,7 @@ export default function CarInfoTabs() {
                 Info
             </TabPanel>
             <TabPanel value={value} index={1} >
-                <CarList type={value} />
+                <ScheduleList type={value} />
             </TabPanel>
         </div>
     );
