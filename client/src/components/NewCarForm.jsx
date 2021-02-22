@@ -14,6 +14,8 @@ for(let i = 2022; i >= 1950; i--) {
     years.push(i)
 }
 
+const options = years.map(year => <MenuItem value={year} key={year}>{year}</MenuItem>)
+
 const NewCarForm = ({ handleClose = () => null }) => {
 
     const [body, setBody] = useState('')
@@ -33,7 +35,7 @@ const NewCarForm = ({ handleClose = () => null }) => {
                 Add a car
             </Typography>
             <br />
-            <FormControl variant="outlined">
+            <FormControl variant="outlined" required>
                 <InputLabel id="demo-simple-select-outlined-label">Year</InputLabel>
                 <Select
                     labelId="demo-simple-select-outlined-label"
@@ -42,7 +44,7 @@ const NewCarForm = ({ handleClose = () => null }) => {
                     onChange={e => setSelectedYear(e.target.value)}
                     label="Year"
                 >
-                    {years.map(year => <MenuItem value={year} key={year}>{year}</MenuItem>)}
+                    {options}
                 </Select>
             </FormControl>
             <br />
