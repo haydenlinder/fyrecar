@@ -35,11 +35,11 @@ const NewCarForm = ({ handleClose = () => null }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit} style={{ minWidth: 300 }}>
+        <form onSubmit={handleSubmit} style={{ minWidth: 250 }}>
             <Typography gutterBottom variant='h5'>
                 Add a car
             </Typography>
-            <br />
+            <Box m={1}></Box>
             <FormControl variant="outlined" required>
                 <InputLabel id="demo-simple-select-outlined-label">Year</InputLabel>
                 <Select
@@ -53,7 +53,7 @@ const NewCarForm = ({ handleClose = () => null }) => {
                     {options}
                 </Select>
             </FormControl>
-            <br />
+            <Box m={1}></Box>
             <TextField
                 label="Make"
                 aria-label="textfield"
@@ -65,7 +65,7 @@ const NewCarForm = ({ handleClose = () => null }) => {
                 required
                 fullWidth
             />
-            <br />
+            <Box m={1}></Box>
             <TextField
                 label="Model"
                 aria-label="textfield"
@@ -77,7 +77,7 @@ const NewCarForm = ({ handleClose = () => null }) => {
                 required
                 fullWidth
             />
-            <br />
+            <Box m={1}></Box>
             <TextField
                 label="VIN"
                 aria-label="textfield"
@@ -89,7 +89,7 @@ const NewCarForm = ({ handleClose = () => null }) => {
                 required
                 fullWidth
             />
-            <br />
+            <Box m={1}></Box>
             <Box display='flex' justifyContent='flex-end'>
                 <CardActions>
                     <Button
