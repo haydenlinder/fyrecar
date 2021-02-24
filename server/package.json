@@ -1,0 +1,18 @@
+{
+  "name": "apollo-server-test",
+  "version": "1.0.0",
+  "description": "A simple Apollo server.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "PORT=4000 nodemon ./source/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.21.0",
+    "graphql": "^15.5.0",
+    "nodemon": "^2.0.7"
+  }
+}
