@@ -6,7 +6,7 @@ import React from 'react'
 import MyModal from "./MyModal";
 import NewCarForm from "./NewCarForm";
 
-const CarList = ({ type, cars }) => {
+const CarList = ({ cars }) => {
 
     const [isModalOpen, setIsModalOpen] = React.useState(false)
 
@@ -19,12 +19,8 @@ const CarList = ({ type, cars }) => {
     }
 
     return (
-        <Box height='100%' pb={15} overflow='scroll' display='flex' justifyContent='center' alignItems='center' flexWrap='wrap'>
-            <CarListItem />
-            <CarListItem />
-            <CarListItem />
-            <CarListItem />
-            <CarListItem />
+        <Box height='100%' pb={15} overflow='scroll' display='flex' justifyContent='center' alignItems='flex-start' flexWrap='wrap'>
+            {cars.map(car => <CarListItem car={car} key={car.id}/>)}
             <IconButton onClick={openModal} style={{ border: '2px solid white', boxShadow: '3px 3px 5px grey', background: '#2196f3', position: 'absolute', bottom: 30, right: 15 }}  edge="start" aria-label="menu">
                 <AddRoundedIcon fontSize='large' color='secondary' />
             </IconButton>

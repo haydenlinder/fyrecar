@@ -2,10 +2,10 @@ const { cars, owners } = require('./data')
 
 const resolvers = {
     Query: {
-        cars() {
-            return cars
+        cars(parent, args) {
+            return args.id ? cars.filter(car => car.id == args.id) : cars
         },
-        owners() {
+        owners(parent, args) {
             return owners
         },
     },

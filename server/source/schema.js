@@ -2,7 +2,7 @@ const { gql } = require('apollo-server')
 
 const typeDefs = gql`
     type Query {
-        cars: [Car]
+        cars(id: ID): [Car]
         owners: [Owner]
     }
 
@@ -16,6 +16,8 @@ const typeDefs = gql`
         year: String! 
         vin: String!
         photoUrl: String!
+        isAvailable: Boolean!
+        schedule: String!
     }
 
     type Owner {

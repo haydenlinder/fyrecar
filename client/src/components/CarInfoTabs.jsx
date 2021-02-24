@@ -42,7 +42,7 @@ export default function CarInfoTabs() {
     };
 
     return (
-        <div style={{ height: '50%' }}>
+        <div style={{ height: '50%', width: '100%' }}>
             <AppBar position="static" color='secondary' >
                 <Tabs value={value} indicatorColor='primary' variant='fullWidth' centered onChange={handleChange} aria-label="availability tabs">
                     <Tab label="Info" {...a11yProps(0)} />

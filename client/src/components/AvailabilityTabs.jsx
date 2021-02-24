@@ -3,7 +3,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
 import CarList from '../components/CarList'
 
 function TabPanel(props) {
@@ -20,7 +19,7 @@ function TabPanel(props) {
         >
             {value === index && (
                 <Container disableGutters style={{ height: '100%', position: 'relative' }} maxWidth='md'>
-                    <CarList type={index}/>
+                    {children}
                 </Container>
             )}
         </div>
@@ -35,7 +34,7 @@ function a11yProps(index) {
 }
 
 
-export default function AvailabilityTabs() {
+export default function AvailabilityTabs({ cars }) {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -53,14 +52,14 @@ export default function AvailabilityTabs() {
                     </Tabs>
                 </Container>
             </AppBar>
-            <TabPanel value={value} index={0}>
-                Item One
+            <TabPanel value={value} index={0} >
+                <CarList cars={cars} />
             </TabPanel>
-            <TabPanel value={value} index={1}>
-                Item Two
+            <TabPanel value={value} index={1} >
+                <CarList cars={cars.filter(car => car.isAvailable)} />
             </TabPanel>
-            <TabPanel value={value} index={2}>
-                Item Three
+            <TabPanel value={value} index={2} >
+                <CarList cars={cars.filter(car => !car.isAvailable)} />
             </TabPanel>
         </div>
     );
