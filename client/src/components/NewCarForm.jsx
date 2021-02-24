@@ -7,26 +7,31 @@ import FormControl from '@material-ui/core/FormControl'
 import InputLabel from '@material-ui/core/InputLabel'
 import Select from '@material-ui/core/Select'
 import MenuItem from '@material-ui/core/MenuItem'
-import { useState } from 'react'
+import useNewCarValidation from '../hooks/useNewCarValidation'
+import React from 'react'
 
 const years = []
 for(let i = 2022; i >= 1950; i--) {
     years.push(i)
 }
 
-const options = years.map(year => <MenuItem value={year} key={year}>{year}</MenuItem>)
+const options = years.map(year => <MenuItem name="year" value={year} key={year}>{year}</MenuItem>)
 
 const NewCarForm = ({ handleClose = () => null }) => {
 
-    const [body, setBody] = useState('')
-    const [selectedYear, setSelectedYear] = useState(2021)
+    const { values, handleChange, validate } = useNewCarValidation()
 
-    const handleSubmit = async e => {
+    const handleSubmit = e => {
         e.preventDefault()
-    }
 
-    const handleChange = e => {
-        setBody(e.target.value)
+        const { isValid, errors } = validate()
+        console.log({ values, errors })
+        if (!isValid) return
+
+    }
+    
+    const onChange = e => {
+        handleChange(e)
     }
 
     return (
@@ -40,8 +45,9 @@ const NewCarForm = ({ handleClose = () => null }) => {
                 <Select
                     labelId="demo-simple-select-outlined-label"
                     id="demo-simple-select-outlined"
-                    value={selectedYear}
-                    onChange={e => setSelectedYear(e.target.value)}
+                    value={values.year}
+                    name="year"
+                    onChange={onChange}
                     label="Year"
                 >
                     {options}
@@ -52,8 +58,10 @@ const NewCarForm = ({ handleClose = () => null }) => {
                 label="Make"
                 aria-label="textfield"
                 variant='outlined'
-                placeholder="What do you want to say"
-                onChange={handleChange}
+                placeholder="Make"
+                name="make"
+                value={values.make}
+                onChange={onChange}
                 required
                 fullWidth
             />
@@ -62,8 +70,10 @@ const NewCarForm = ({ handleClose = () => null }) => {
                 label="Model"
                 aria-label="textfield"
                 variant='outlined'
-                placeholder="What do you want to say"
-                onChange={handleChange}
+                placeholder="Model"
+                name="model"
+                value={values.model}
+                onChange={onChange}
                 required
                 fullWidth
             />
@@ -73,7 +83,9 @@ const NewCarForm = ({ handleClose = () => null }) => {
                 aria-label="textfield"
                 variant='outlined'
                 placeholder="Type the vehicle's VIN"
-                onChange={handleChange}
+                name="vin"
+                value={values.vin}
+                onChange={onChange}
                 required
                 fullWidth
             />
