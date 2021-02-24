@@ -6,10 +6,22 @@ const typeDefs = gql`
         owners: [Owner]
     }
 
+    type Mutation {
+        car(
+            ownerId: ID!
+            make: String!
+            model: String!
+            year: String! 
+            vin: String!
+            photoUrl: String!
+        ): Car
+    }
+
     type Car {
         "An owner's car"
         id: ID!
         owner: Owner!
+        ownerId: ID!
         make: String!
         model: String!
         "Per the requirements in the README, the year is a String"
@@ -17,6 +29,7 @@ const typeDefs = gql`
         vin: String!
         photoUrl: String!
         isAvailable: Boolean!
+        isIdle: Boolean!
         schedule: String!
     }
 

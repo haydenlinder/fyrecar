@@ -20,7 +20,6 @@ const Cars = ({}) => {
     `
 
     const { loading, error, data } = useQuery(GET_OWNED_CARS)
-    console.log({error}, {data})
 
     return (
         <>

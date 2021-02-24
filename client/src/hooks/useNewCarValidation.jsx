@@ -1,10 +1,11 @@
 import React from 'react'
 
 const useNewCarValidation = (defaultOpts={
-    year: 2021,
+    year: '2021',
     make: '',
     model: '',
-    vin: ''
+    vin: '',
+    photoUrl: ''
 }) => {
 
     const [values, setValues] = React.useState(defaultOpts)

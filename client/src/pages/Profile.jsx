@@ -8,7 +8,7 @@ const Profile = ({
     lastName='DeMuro'
 }) => {
     return (
-        <Box display='flex' mt={2}>
+        <Box display='flex' m={2}>
             <Box mr={2}>
                 <Avatar src={photoUrl} style={{ height: 150, width: 150}}/>
             </Box>

@@ -1,4 +1,7 @@
-const { cars, owners } = require('./data')
+fs = require('fs')
+const data = require('./data')
+
+const { cars, owners } = data
 
 const resolvers = {
     Query: {
@@ -8,6 +11,20 @@ const resolvers = {
         owners(parent, args) {
             return owners
         },
+    },
+    Mutation: {
+        car(parent, args) {
+            console.log(args)
+            const newCar = args
+            newCar.isAvailable = false
+            newCar.schedule = new Date()
+            newCar.isIdle = true
+            newCar.id = cars[cars.length-1].id + 1
+            data.cars.push(newCar)
+            const newData = "const data = " + JSON.stringify(data) + "\nmodule.exports = data"
+            fs.writeFileSync('./source/data.js', newData)
+            return newCar
+        }
     },
     Owner: {
         cars(parent) {

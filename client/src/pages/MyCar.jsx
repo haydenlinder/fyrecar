@@ -33,13 +33,12 @@ const MyCar = (car={
                 photoUrl
                 isAvailable
                 schedule
+                isIdle
             }
         }
     `
 
     const { loading, error, data } = useQuery(GET_OWNED_CAR)
-
-    console.log({error}, {data})
 
     if (loading) return (
         <CircularProgress />

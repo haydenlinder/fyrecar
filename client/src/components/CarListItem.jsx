@@ -25,19 +25,19 @@ export default function CarListItem({
     const formattedDate = new Date(parsed).toLocaleTimeString().slice(0, -6)
 
     return (
-        <Box mt={2} mr={1} ml={1} style={{cursor: 'pointer', width: fullSize?'100%':300}} onClick={e => history.push(`/mycars/${id}`)}>
-            <Card>
-                <Box display='flex' flexDirection={fullSize?'column':'row'} height={fullSize? '280px':'100px'} >
+        <Box mt={2} mr={1} ml={1} style={{cursor: 'pointer', width: fullSize?'100%':300, height:fullSize?'50%':''}} onClick={e => history.push(`/mycars/${id}`)}>
+            <Card style={{height: '100%'}}>
+                <Box display='flex' flexDirection={fullSize?'column':'row'} height={fullSize? '100%':'100px'} >
                     <CardMedia
                         style={{ height: '100%', minWidth: 130 }}
                         image={photoUrl}
                         title="Live from space album cover"
                     />
                     <CardContent >
-                        <Typography variant="h7">
+                        <Typography variant="subtitle2">
                             {`${year} ${make} ${model}`.slice(0,40)}
                         </Typography>
-                        <Typography variant="subtitle2" >
+                        <Typography variant="caption" >
                             {isAvailable?
                             <Box color="textSecondary.main">
                                 Available until {formattedDate}

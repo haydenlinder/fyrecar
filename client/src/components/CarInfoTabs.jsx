@@ -3,6 +3,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
 import ScheduleList from '../components/ScheduleList'
 
 function TabPanel(props) {
@@ -34,12 +35,14 @@ function a11yProps(index) {
 }
 
 
-export default function CarInfoTabs() {
+export default function CarInfoTabs({ car }) {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    const { year, make, model, vin } = car
 
     return (
         <div style={{ height: '50%', width: '100%' }}>
@@ -50,7 +53,12 @@ export default function CarInfoTabs() {
                 </Tabs>
             </AppBar>
             <TabPanel value={value} index={0} >
-                Info
+                <Box p={2}>
+                    <div>Year: {year}</div>
+                    <div>Make: {make}</div>
+                    <div>Model: {model}</div>
+                    <div>VIN: {vin}</div>
+                </Box>
             </TabPanel>
             <TabPanel value={value} index={1} >
                 <ScheduleList type={value} />
