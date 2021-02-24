@@ -25,7 +25,7 @@ const NewCarForm = ({ handleClose = () => null }) => {
         e.preventDefault()
 
         const { isValid, errors } = validate()
-        console.log({ values, errors })
+
         if (!isValid) return
 
     }
