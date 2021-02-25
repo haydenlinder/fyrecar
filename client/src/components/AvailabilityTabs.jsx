@@ -59,7 +59,7 @@ export default function AvailabilityTabs({ cars }) {
                 <CarList cars={cars.filter(car => car.isAvailable)} />
             </TabPanel>
             <TabPanel value={value} index={2} >
-                <CarList cars={cars.filter(car => !car.isAvailable)} />
+                <CarList cars={cars.filter(car => !car.isAvailable && !car.isIdle)} />
             </TabPanel>
         </div>
     );

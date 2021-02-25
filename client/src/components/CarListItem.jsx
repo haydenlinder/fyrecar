@@ -18,7 +18,7 @@ export default function CarListItem({
     car,
     fullSize=false
 }) {
-    const { id, year, make, model, photoUrl, schedule, isAvailable } = car
+    const { id, year, make, model, photoUrl, schedule, isAvailable, isIdle } = car
     
     const history = useHistory()
     const parsed = Date.parse('2021-02-24T06:50:45.749Z')
@@ -38,7 +38,11 @@ export default function CarListItem({
                             {`${year} ${make} ${model}`.slice(0,40)}
                         </Typography>
                         <Typography variant="caption" >
-                            {isAvailable?
+                            {isIdle?
+                                <Box >
+                                    Idle
+                                </Box>:
+                            isAvailable?
                             <Box color="textSecondary.main">
                                 Available until {formattedDate}
                             </Box> :

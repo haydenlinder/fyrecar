@@ -52,7 +52,7 @@ const NewCarForm = ({ handleClose = () => null }) => {
         }
     `
 
-    const [addCar, { data }] = useMutation(ADD_CAR)
+    const [addCar, { data, error }] = useMutation(ADD_CAR)
 
     const handleSubmit = async e => {
         e.preventDefault()

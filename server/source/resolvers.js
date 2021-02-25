@@ -9,13 +9,12 @@ const resolvers = {
             return args.id ? cars.filter(car => car.id == args.id) : cars
         },
         owners(parent, args) {
-            return owners
+            return args.id ? owners.filter(owner => owner.id == args.id) : owners
         },
     },
     Mutation: {
         car(parent, args) {
-            console.log(args)
-            const newCar = args
+            const newCar = {...args}
             newCar.isAvailable = false
             newCar.schedule = new Date()
             newCar.isIdle = true
@@ -28,12 +27,12 @@ const resolvers = {
     },
     Owner: {
         cars(parent) {
-            return cars.filter(car => car.ownerId === parent.id)
+            return cars.filter(car => car.ownerId == parent.id)
         }
     },
     Car: {
         owner(parent) {
-            return owners.find(owner => owner.id === parent.ownerId)
+            return owners.find(owner => owner.id == parent.ownerId)
         }
     }
 }
